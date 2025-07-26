@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegraph-Image 图床</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖼️</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Telegraph-Image 图床</h1>
+            <p>免费、高速、稳定的图片托管服务</p>
+        </header>
+
+        <main>
+            <div class="upload-area" id="drop-area">
+                <div class="upload-icon">📁</div>
+                <h2>拖放图片到此处</h2>
+                <p>或</p>
+                <button class="btn" id="select-btn">选择图片</button>
+                <input type="file" id="file-input" accept="image/*" multiple hidden>
+                <div class="file-info">
+                    <p>支持格式: JPG, PNG, GIF, WebP</p>
+                    <p>最大文件: 5MB</p>
+                </div>
+            </div>
+
+            <div class="result-container" id="result-container" style="display: none;">
+                <h3>上传结果</h3>
+                <div class="image-preview" id="image-preview"></div>
+                <div class="url-container">
+                    <input type="text" id="image-url" readonly>
+                    <button class="btn copy-btn" data-clipboard-target="#image-url">复制链接</button>
+                </div>
+                <div class="markdown-container">
+                    <input type="text" id="markdown-url" readonly>
+                    <button class="btn copy-btn" data-clipboard-target="#markdown-url">复制Markdown</button>
+                </div>
+                <button class="btn" id="new-upload">上传新图片</button>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>上传中...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2023 Telegraph-Image | 基于 Telegram & EdgeOne Pages 构建</p>
+            <p><a href="/admin" id="admin-link">管理后台</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+    <script src="assets/upload.js"></script>
+</body>
+</html>
