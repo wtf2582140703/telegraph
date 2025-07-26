@@ -1,14 +1,3 @@
-// 临时绕过认证
-export async function onRequestPost({ request, env }) {
-  // 添加调试头
-  const headers = new Headers({
-    'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'application/json'
-  });
-  
-  // 立即返回成功响应测试
-  return new Response(JSON.stringify({ test: "success" }), { headers });
-}
 export async function onRequestPost(context) {
     try {
         const { request, env } = context;
