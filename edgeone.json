@@ -30,7 +30,7 @@
     {
       "source": "/admin",
       "destination": "/admin.html",
-      "statusCode": 200
+      "statusCode": 301
     },
     {
       "source": "/login",
